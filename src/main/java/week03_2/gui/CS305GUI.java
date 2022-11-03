@@ -14,6 +14,8 @@ public class CS305GUI extends javax.swing.JFrame {
      */
     public CS305GUI() {
         initComponents();
+        setResizable(false);
+        setLocationRelativeTo(null);
     }
 
     /**
