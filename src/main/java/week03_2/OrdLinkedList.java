@@ -14,7 +14,6 @@ public class OrdLinkedList implements OrdMethods {
         n = 0;
     }
 
-
     @Override
     public void clear() {
         first = null;
@@ -83,12 +82,12 @@ public class OrdLinkedList implements OrdMethods {
         if (find(value) == -1) return false;
 
         Link cur = first;
-        if (cur.data == value){
+        if (cur.data == value) {
             first = null;
             return true;
         }
-        while (cur.next != null){
-            if (cur.next.data == value){
+        while (cur.next != null) {
+            if (cur.next.data == value) {
                 cur.next = cur.next.next;
                 return true;
             }
@@ -115,46 +114,11 @@ public class OrdLinkedList implements OrdMethods {
         Link cur = first;
         while (cur != null) {
             if (cur.data > k) {
-               return cur.data;
+                return cur.data;
             }
             cur = cur.next;
         }
         return k;
-    }
-
-    public static void main(String[] args) {
-        OrdLinkedList ordLinkedList = new OrdLinkedList();
-
-        ordLinkedList.insert(1);
-        ordLinkedList.display();
-
-        ordLinkedList.insert(2);
-        ordLinkedList.display();
-
-        ordLinkedList.insert(7);
-        ordLinkedList.display();
-
-        ordLinkedList.insert(0);
-        ordLinkedList.display();
-//
-//        System.out.println(ordLinkedList.delete(7));
-//        ordLinkedList.display();
-
-        System.out.println(ordLinkedList.findMax());
-//        ordLinkedList.display();
-
-
-        System.out.println(ordLinkedList.findMin());
-//        ordLinkedList.display();
-
-        System.out.println(ordLinkedList.findPrev(7));
-//        ordLinkedList.display();
-
-        System.out.println(ordLinkedList.findNext(1));
-        ordLinkedList.display();
-
-
-
     }
 
     @Override
@@ -192,3 +156,36 @@ public class OrdLinkedList implements OrdMethods {
 }
 
 
+class OrdLinkedListDemo {
+    public static void main(String[] args) {
+        OrdLinkedList ordLinkedList = new OrdLinkedList();
+
+        ordLinkedList.insert(1);
+        ordLinkedList.display();
+
+        ordLinkedList.insert(2);
+        ordLinkedList.display();
+
+        ordLinkedList.insert(7);
+        ordLinkedList.display();
+
+        ordLinkedList.insert(0);
+        ordLinkedList.display();
+
+        System.out.println("\nMax:");
+        System.out.println(ordLinkedList.findMax());
+
+        System.out.println("\nMin:");
+        System.out.println(ordLinkedList.findMin());
+
+        System.out.println("\nPrev of 7:");
+        System.out.println(ordLinkedList.findPrev(7));
+
+        System.out.println("\nNext of 1:");
+        System.out.println(ordLinkedList.findNext(1));
+
+        System.out.println("\nDisplay after delete 1:");
+        ordLinkedList.delete(1);
+        ordLinkedList.display();
+    }
+}
