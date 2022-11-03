@@ -150,7 +150,7 @@ public class OrdLinkedList implements OrdMethods {
         System.out.println(ordLinkedList.findPrev(7));
 //        ordLinkedList.display();
 
-        System.out.println(ordLinkedList.findNext(7));
+        System.out.println(ordLinkedList.findNext(1));
         ordLinkedList.display();
 
 
@@ -163,10 +163,12 @@ public class OrdLinkedList implements OrdMethods {
         if (f == -1) return -1;
 
         Link cur = first;
+        Link prev = first;
         while (cur != null) {
-            if (cur.data < k) {
-                return cur.data;
+            if (cur.data >= k) {
+                return prev.data;
             }
+            prev = cur;
             cur = cur.next;
         }
         return k;
