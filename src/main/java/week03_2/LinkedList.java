@@ -110,8 +110,18 @@ public class LinkedList {
   public void selectionSort() {
 
     // Your code here
+    Link curMin = first;
+    Link curItr = first.next;
 
-  }  // end selectionSort()
+    for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) {
+        if (curItr.data < curMin.data)
+          swap(curMin, curItr);
+        curItr = curItr.next; // inner move
+      }
+      curMin = curMin.next; // outer move
+    }
+      }  // end selectionSort()
 //--------------------------------------------------------------
 
   private void swap(Link one, Link two) {
@@ -146,11 +156,28 @@ public class LinkedList {
   public double findMax() {
 
     // Your code here
-    return 0;
+    if (n == 0) {
+      return -1;
+    }
+    if (n == 1) {
+      return first.data;
+    }
+
+    Link cur = first;
+    double max = cur.data;
+
+    while (cur != null) {
+      if (cur.data > max) {
+        max = cur.data;
+      }
+      cur = cur.next;
+    }
+
+    return max;
   }
 
   //------------------------ Find Next O(n) ------------------------------
-  // return the stored item with smallest key larger than k
+  // return the stored item with the smallest key larger than k
   public double findNext(double k) {
     int f = find(k);
     if (f == -1) {
@@ -181,10 +208,35 @@ public class LinkedList {
   }
 
   //------------------------ Find Prev O(n) ------------------------------
-  // return the stored item with largest key smaller than k
+  // return the stored item with the largest key smaller than k
   public double findPrev(double k) {
     // Your code here
-    return 0;
+    int f = find(k);
+    if (f == -1) {
+      return -1;
+    }
+
+    double maxMin = -1;
+    Link cur1 = first;
+    Link cur2 = first;
+    while (cur1 != null) {
+      if (cur1.data < k) {
+        maxMin = cur1.data;
+        cur2 = cur1.next;
+        break;
+      }
+
+      cur1 = cur1.next;
+    }
+
+    while (cur2 != null) {
+      if (cur2.data < k && cur2.data > maxMin) {
+        maxMin = cur2.data;
+      }
+      cur2 = cur2.next;
+    }
+
+    return maxMin; // -1 if no such item
   }
 //------------------------ Display Elements O(n) ----------------------
 
@@ -199,13 +251,13 @@ public class LinkedList {
   }
 
   public String toString() {
-    String s = "";
+    StringBuilder s = new StringBuilder();
     Link cur = first; // for each element,
     while (cur != null) {
-      s += cur.data + " ";
+      s.append(cur.data).append(" ");
       cur = cur.next;
     }
 
-    return s;
+    return s.toString();
   }
 }
