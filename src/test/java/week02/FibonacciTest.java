@@ -13,10 +13,10 @@ public class FibonacciTest {
     private Fibonacci fibonacci;
 
     @Test
-    public void fibWay1Test(){
-        int ex = 13;
-        int basEx0 = 0;
-        int basEx1 = 1;
+    public void fibWay1Test() {
+        int ex = 13; // for 7
+        int basEx0 = 0; // for 0
+        int basEx1 = 1; // for 1
 
         Assertions.assertEquals(ex, fibonacci.fibWay1(7));
         Assertions.assertEquals(basEx0, fibonacci.fibWay1(0));
@@ -26,15 +26,13 @@ public class FibonacciTest {
 
 
     @Test
-    public void fibWay2Test(){
-        int ex = 13;
-        int basEx0 = 0;
-        int basEx1 = 1;
+    public void fibWay2Test() {
+        int ex = 13; // for 7
+        int basEx0 = 0; // for 0
+        int basEx1 = 1; // for 1
 
         Assertions.assertEquals(ex, fibonacci.fibWay2(7));
         Assertions.assertEquals(basEx0, fibonacci.fibWay2(0));
-        Assertions.assertEquals(basEx1, fibonacci.fibWay2(1));
+        Assertions.assertEquals(basEx1, fibonacci.fibWay2(2));
     }
-
-
 }
