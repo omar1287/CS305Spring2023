@@ -142,4 +142,14 @@ public class OrdArrayList {
         }
         System.out.println("");
     }
+
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        for (int j = 0; j < n; j++) // for each element,
+        {
+            s.append(a[j]).append(" ");
+        }
+        return s.toString();
+    }
 }

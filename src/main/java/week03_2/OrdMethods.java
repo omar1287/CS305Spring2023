@@ -68,10 +68,4 @@ public interface OrdMethods{
      * display data in console
      */
     void display();
-
-    /**
-     *
-     * @return string that describe data
-     */
-    String toString();
 }
