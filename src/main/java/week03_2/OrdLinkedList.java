@@ -107,7 +107,7 @@ public class OrdLinkedList implements OrdMethods {
     }
 
     @Override
-    public double findNext(double k) {
+    public double findNext(double k) { //O(n)
         int f = find(k);
         if (f == -1) return -1;
 
@@ -122,7 +122,7 @@ public class OrdLinkedList implements OrdMethods {
     }
 
     @Override
-    public double findPrev(double k) {
+    public double findPrev(double k) { //O(n)
         int f = find(k);
         if (f == -1) return -1;
 

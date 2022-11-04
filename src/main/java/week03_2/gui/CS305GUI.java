@@ -106,7 +106,7 @@ public class CS305GUI extends javax.swing.JFrame {
         teRead.setRows(5);
         jScrollPane1.setViewportView(teRead);
 
-        eventBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "build", "delete", "insert", "selectionSort", "find", "display" }));
+        eventBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"build", "delete", "insert", "selectionSort", "find", "display"}));
         eventBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventBoxActionPerformed(evt);
@@ -214,7 +214,7 @@ public class CS305GUI extends javax.swing.JFrame {
         teRead1.setRows(5);
         jScrollPane3.setViewportView(teRead1);
 
-        eventBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "build", "delete", "insert", "find", "display" }));
+        eventBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"build", "delete", "insert", "find", "display"}));
         eventBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventBox1ActionPerformed(evt);
@@ -322,7 +322,7 @@ public class CS305GUI extends javax.swing.JFrame {
         teRead2.setRows(5);
         jScrollPane5.setViewportView(teRead2);
 
-        eventBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "build", "delete", "insert", "selectionSort", "find", "display" }));
+        eventBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"build", "delete", "insert", "selectionSort", "find", "display"}));
         eventBox2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventBox2ActionPerformed(evt);
@@ -430,7 +430,7 @@ public class CS305GUI extends javax.swing.JFrame {
         teRead3.setRows(5);
         jScrollPane7.setViewportView(teRead3);
 
-        eventBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "build", "delete", "insert", "selectionSort", "find", "display" }));
+        eventBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"build", "delete", "insert", "selectionSort", "find", "display"}));
         eventBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventBox3ActionPerformed(evt);
@@ -552,12 +552,13 @@ public class CS305GUI extends javax.swing.JFrame {
     }// </editor-fold>
 
     ArrayList a;
+
     private void applyBtnActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         String switcher = (String) eventBox.getSelectedItem();
 
         long st = System.currentTimeMillis();
-        switch (switcher) {
+        switch (Objects.requireNonNull(switcher)) {
 
             case "build" -> {
                 String[] s = teRead.getText().split(" ");
@@ -600,8 +601,8 @@ public class CS305GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String switcher = (String) eventBox.getSelectedItem();
 
-        switch (switcher) {
-            case "build","selectionSort","display" -> {
+        switch (Objects.requireNonNull(switcher)) {
+            case "build", "selectionSort", "display" -> {
                 givenItem.setEnabled(false);
             }
             default -> {
@@ -614,8 +615,8 @@ public class CS305GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String switcher = (String) eventBox1.getSelectedItem();
 
-        switch (switcher) {
-            case "build","selectionSort","display" -> {
+        switch (Objects.requireNonNull(switcher)) {
+            case "build", "selectionSort", "display" -> {
                 givenItem1.setEnabled(false);
             }
             default -> {
@@ -625,6 +626,7 @@ public class CS305GUI extends javax.swing.JFrame {
     }
 
     OrdArrayList ordA;
+
     private void applyBtn1ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         String switcher = (String) eventBox1.getSelectedItem();
@@ -670,8 +672,8 @@ public class CS305GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String switcher = (String) eventBox2.getSelectedItem();
 
-        switch (switcher) {
-            case "build","selectionSort","display" -> {
+        switch (Objects.requireNonNull(switcher)) {
+            case "build", "selectionSort", "display" -> {
                 givenItem2.setEnabled(false);
             }
             default -> {
@@ -681,12 +683,13 @@ public class CS305GUI extends javax.swing.JFrame {
     }
 
     LinkedList linkedList;
+
     private void applyBtn2ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         String switcher = (String) eventBox2.getSelectedItem();
 
         long st = System.currentTimeMillis();
-        switch (switcher) {
+        switch (Objects.requireNonNull(switcher)) {
 
             case "build" -> {
                 String[] s = teRead2.getText().split(" ");
@@ -729,8 +732,8 @@ public class CS305GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String switcher = (String) eventBox3.getSelectedItem();
 
-        switch (switcher) {
-            case "build","selectionSort","display" -> {
+        switch (Objects.requireNonNull(switcher)) {
+            case "build", "selectionSort", "display" -> {
                 givenItem3.setEnabled(false);
             }
             default -> {
@@ -740,12 +743,13 @@ public class CS305GUI extends javax.swing.JFrame {
     }
 
     OrdLinkedList ordLinkedList;
+
     private void applyBtn3ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         String switcher = (String) eventBox3.getSelectedItem();
 
         long st = System.currentTimeMillis();
-        switch (switcher) {
+        switch (Objects.requireNonNull(switcher)) {
 
             case "build" -> {
                 String[] s = teRead3.getText().split(" ");

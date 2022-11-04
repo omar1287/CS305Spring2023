@@ -57,13 +57,31 @@ public class MinMaxTest {
 
   @Test
   public void getMinScenario5() {
+    int[] arr = new int[]{-1};
+
+    minMax = new MinMax(arr);
+
+    Assertions.assertEquals(minMax.getMin(), -1);
+    Assertions.assertEquals(minMax.getMax(), -1);
   }
 
   @Test
   public void getMinScenario6() {
+    int[] arr = new int[]{0,0};
+
+    minMax = new MinMax(arr);
+
+    Assertions.assertEquals(minMax.getMin(), 0);
+    Assertions.assertEquals(minMax.getMax(), 0);
   }
 
   @Test
   public void getMinScenario7() {
+    int[] arr = new int[]{-100,-10000,100};
+
+    minMax = new MinMax(arr);
+
+    Assertions.assertEquals(minMax.getMin(), -10000);
+    Assertions.assertEquals(minMax.getMax(), 100);
   }
 }
