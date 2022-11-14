@@ -430,7 +430,7 @@ public class CS305GUI extends javax.swing.JFrame {
         teRead3.setRows(5);
         jScrollPane7.setViewportView(teRead3);
 
-        eventBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"build", "delete", "insert", "selectionSort", "find", "display"}));
+        eventBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"build", "delete", "insert", "find", "display"}));
         eventBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 eventBox3ActionPerformed(evt);

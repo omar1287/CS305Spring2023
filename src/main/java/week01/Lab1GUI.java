@@ -208,7 +208,7 @@ public class Lab1GUI extends javax.swing.JFrame {
     // Create a simple XY chart
     XYSeries series = new XYSeries("XYGraph");
     // Generate 20 arrays with random values
-    for (int i = 1; i <= 20; i++) {
+    for (int i = 1; i <= 50; i++) {
       int[] a = new int[i * 1000];
       fillArray(a);
       long start = System.currentTimeMillis();
@@ -244,8 +244,9 @@ public class Lab1GUI extends javax.swing.JFrame {
   }//GEN-LAST:event_jButton2ActionPerformed
 
   public static void fillArray(int[] a) {
-    for (int i = 0; i < a.length; i++) {
-      a[i] = 1 + (int) (Math.random() * 10);
+    int n = a.length;
+    for (int i = 0,j=n-1; i < a.length; i++,j--) {
+      a[i] = j;
     }
   }
 
