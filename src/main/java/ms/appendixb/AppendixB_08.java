@@ -148,11 +148,12 @@ public class AppendixB_08 extends javax.swing.JFrame {
         XYSeries series = new XYSeries("XYGraph");
         Random rand = new Random();
         // Generate 20 arrays with random values
-        for (int i = 1; i <= 500; i++) {
+        for (int i = 1; i <= 38500; i*=4) {
             long start = System.nanoTime();
-            Problem_01_09_Ex_08.impl(rand.nextInt(10000)+1);
+            int res = Problem_01_09_Ex_08.impl(i);
             long end = System.nanoTime();
             long time = end - start;
+//            series.add(i, res);
             series.add(i, time);
         }
 
